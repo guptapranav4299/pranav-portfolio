@@ -2121,9 +2121,169 @@ a.brand:focus{
   .social-list-bottom{
     display: block;
   }
-  
+
 }
 
 
 
+/* ------------------------------------------------------------------------------- */
+/*  5.7 Mobile — max-width 575px (iPhone and similar small screens)
+/* ------------------------------------------------------------------------------- */
 
+
+
+@media (max-width: 575px) {
+
+  /* Prevent horizontal scroll caused by wide pseudo-elements and negative margins */
+  body {
+    overflow-x: hidden;
+  }
+
+  .pagepiling .section,
+  .scroll-wrap,
+  .scrollable-content {
+    overflow-x: hidden;
+  }
+
+
+  /* --- Typography --- */
+
+  .display-2 {
+    font-size: 2.8rem;
+  }
+
+  h2, .h2 {
+    font-size: 2rem;
+    margin: 1.2rem 0;
+  }
+
+  h3, .h3 {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+  }
+
+  blockquote {
+    padding-left: 2rem;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+
+  /* --- Sections padding --- */
+
+  .pp-scrollable .vertical-centred {
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-3 .vertical-centred {
+    padding-top: 5rem;
+  }
+
+
+  /* --- Section 1: Hero --- */
+
+  .section-1 .intro ul {
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+  }
+
+  .section-1 .intro ul li {
+    margin-bottom: 0.4rem;
+  }
+
+
+  /* --- Section 4: About / Skills --- */
+
+  .experience-number {
+    font-size: 9rem;
+  }
+
+  .experience-box {
+    padding: 1.5rem;
+  }
+
+  .experience-info {
+    font-size: 1rem;
+  }
+
+
+  /* --- Section 5: Projects --- */
+
+  .project-title {
+    font-size: 1.8rem;
+  }
+
+  .project-row,
+  .view-all-projects,
+  .project-detail-row {
+    padding-left: 2.5rem;
+  }
+
+  /* Hide the extra-wide horizontal line pseudo-elements that cause scroll */
+  .project-row a:after,
+  .project-row a.active:after,
+  .view-all a:before {
+    display: none;
+  }
+
+
+  /* --- Section 6: Tech Skills / Partners --- */
+
+  .row-partners {
+    margin: 0 -1rem;
+  }
+
+  .col-partner {
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+
+  /* --- Section 3: Education / Experience --- */
+
+  .resume-header {
+    top: 0;
+    padding: 0 1rem;
+  }
+
+  .col-resume {
+    padding: 1.5rem;
+  }
+
+  .resume-type {
+    letter-spacing: 0.05rem;
+  }
+
+
+  /* --- Section 7: Testimonials --- */
+
+  /* Hide the extra-wide horizontal rule on testimonials */
+  .review-row:before {
+    width: 100%;
+  }
+
+
+  /* --- Section 8: Contact --- */
+
+  .contact-address {
+    margin-top: 2rem;
+  }
+
+  .contact-address h3 {
+    font-size: 1.2rem;
+    word-break: break-all;
+  }
+
+
+  /* --- Navbar --- */
+
+  .contacts {
+    display: none !important;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+
+}
