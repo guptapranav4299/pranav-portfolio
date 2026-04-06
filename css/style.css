@@ -2134,15 +2134,44 @@ a.brand:focus{
 
 @media (max-width: 575px) {
 
-  /* Prevent horizontal scroll caused by wide pseudo-elements and negative margins */
+  /* Prevent horizontal scroll at every containment level */
+  html,
   body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pagepiling,
+  .pagepiling .section,
+  .scroll-wrap {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /*
+   * Root cause fix: .scrollable-content uses white-space:nowrap + inline-block
+   * for vertical centering, which causes horizontal overflow on iOS Chrome.
+   * Replace with flexbox so no whitespace-nowrap context is needed.
+   */
+  .scrollable-content {
+    white-space: normal;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
     overflow-x: hidden;
   }
 
-  .pagepiling .section,
-  .scroll-wrap,
-  .scrollable-content {
-    overflow-x: hidden;
+  .scrollable-content:before {
+    display: none;
+  }
+
+  .vertical-centred {
+    display: block;
+    width: 100%;
   }
 
 
@@ -2253,6 +2282,14 @@ a.brand:focus{
 
   .resume-type {
     letter-spacing: 0.05rem;
+  }
+
+  /* Break long URLs and tech stack strings that would overflow on narrow screens */
+  .resume-text,
+  .resume-text a,
+  .resume-study {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
 
