@@ -1059,11 +1059,18 @@ a.brand:focus{
   background: #1b1b1b;
   padding-top: 10.3rem;
   padding-bottom: 6rem;
+  /* iOS Safari resolves height:100% (set by pagepiling.js) against the
+     inflated layout viewport, not the visible area behind the toolbar.
+     dvh tracks the real visible viewport instead. */
+  height: 100vh;
+  height: 100dvh;
 }
 
 .pagepiling .pp-scrollable{
   padding: 0;
   overflow-x:hidden;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .pp-scrollable .vertical-centred{
@@ -1091,6 +1098,7 @@ a.brand:focus{
   content: '';
   display: inline-block;
   height: 100vh;
+  height: 100dvh;
   vertical-align: middle;
 }
 
